@@ -7,7 +7,7 @@ The purpose of this analysis is to use multiple tumour region SNP arrays and a n
 
 Therefore the only raw data needed in this analysis is the B-allele frequency and the Log R ratio data from each array. The pipeline also requires multiple freely available libraries and a pipeline specific source file. This example will run through one case.
 
-We begin by loading all our LRR and BAF data and selecting our case of interest. Which will be case=16.
+We begin by loading all our LRR and BAF data and selecting our case of interest (case=16). I have chosen to save the data as a Rdata file contains the data in the form of a list object in which each element of the object contains a dataframe with case-specific data. The structure of the dataframe is detailed below.
 
 ```{r}
 case=16
@@ -164,7 +164,7 @@ plot(case.mBAF[case.mBAF$Chr==1,3+i], ylim=c(0.5,1), col="darkgrey", pch=20, cex
 For the rest of the analysis we will need the source file specific to this pipeline.
 
 ```{r}
-source("~/Wilms_tumour_project/bin/Original_George_Scripts/CGH_pipeline_source_file_v2.R")
+source("./CGH_pipeline_source_file_v2.R")
 ```
 
 We also need to load the genomic waviness profile generated previously. This means loading the profiles for the autosomes, male and female X chromosomes separately and combining them on for each sex.
