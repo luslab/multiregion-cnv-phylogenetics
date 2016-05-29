@@ -13,8 +13,8 @@ We begin by loading all our LRR and BAF data and selecting our case of interest.
 case=16
 
 #Raw data
-load("~/Wilms_tumour_project/results/2014-06-09/BAFreqs_all.Rdata")
-load("~/Wilms_tumour_project/results/2014-06-09/LogR_Ratios_all_v2.Rdata")
+load("./BAFreqs_all.Rdata")
+load("./LogR_Ratios_all_v2.Rdata")
 
 #Case specific data
 case.LRR <- LogR_Ratios_all[[case]]
@@ -171,9 +171,9 @@ We also need to load the genomic waviness profile generated previously. This mea
 
 ```{r}
 #Load genomic waviness
-load("~/Wilms_tumour_project/results/2014-09-25/movav_avnorm_genome.Rdata")
-load("~/Wilms_tumour_project/results/2015-01-29/female.chr.X.movav.Rdata")
-load("~/Wilms_tumour_project/results/2015-01-29/male.chr.X.movav.med.zeo.Rdata")
+load("./movav_avnorm_genome.Rdata")
+load("./female.chr.X.movav.Rdata")
+load("./male.chr.X.movav.med.zeo.Rdata")
 
 #Make gender specific genomic waviness
 female.movav_avnorm_genome <- c(movav_avnorm_genome, female.chr.X.movav)
