@@ -82,10 +82,15 @@ We must also define some parameters for our analysis:
 The first three parameters are related to the settings used for segmentation in the CGHcall package.
 
 1) _undo.SD_ - A split generating two segments is undone according to CGHcall's _undo.splits_ setting if their mean LRR is less than this number of standard deviations apart, when involving at least one 'small' segment.
+
 2) _clen_ - Segments shorter than _clen_ probes are considered 'small' and segments greater in size are considered 'long' by CGHcall.
+
 3) _relSDlong_ - _undo.SD_ / _relSDlong_  is the number of standard deviations used for undoing splits for two 'long' segments.
+
 4) _crit_ - New region boundaries are introduced by CGHregions if more than this number of arrays has a different copy number state as the algorithm assesses the chromosome. Default = 0, as this means all copy number changes are used to generate regions.
+
 5) _iqr.threshold_ - Regions are removed if their density (bp SNP-1) are ± _iqr.threshold_ * IQR of all measured inter-quartile ranges in the dataset. However, in this example we will not use this as we will only assess one case, instead we will use the limits on density calculated from all cases in this investigation (3162 bp snp-1 - 25119 bp snp-1).
+
 6) _snp.threshold_ - This is the minimum number of SNPs needed in a region for it to be used in phylogenetic analysis.
 
 ```{r}
