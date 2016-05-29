@@ -40,7 +40,14 @@ The following plots represent the LRR data for chromosome 1 in our case. Notice 
 n_samps = ncol(case.LRR)-3
 par(mfrow=c(ceiling(n_samps/2),2))
 for(i in 1:n_samps) {
-plot(case.LRR[case.LRR$Chr==1,3+i], ylim=c(-1,1), col="darkgrey", pch=20, cex=0.1, xlab="Chromosome 1 SNP probes ordered by position", ylab="Log R ratio", main=paste0("Sample ",i))
+plot(case.LRR[case.LRR$Chr==1,3+i], 
+      ylim=c(-1,1), 
+      col="darkgrey", 
+      pch=20, 
+      cex=0.1, 
+      xlab="Chromosome 1 SNP probes ordered by position", 
+      ylab="Log R ratio", 
+      main=paste0("Sample ",i))
 }
 ```
 
@@ -50,7 +57,14 @@ The following plots represent the BAF data for chromosome 1 in our case. B-allel
 n_samps = ncol(case.BAF)-3
 par(mfrow=c(ceiling(n_samps/2),2))
 for(i in 1:n_samps) {
-plot(case.BAF[case.BAF$Chr==1,3+i], ylim=c(0,1), col="darkgrey", pch=20, cex=0.1, xlab="Chromosome 1 SNP probes ordered by position", ylab="B-allele frequency", main=paste0("Sample ",i))
+plot(case.BAF[case.BAF$Chr==1,3+i], 
+      ylim=c(0,1), 
+      col="darkgrey", 
+      pch=20, 
+      cex=0.1, 
+      xlab="Chromosome 1 SNP probes ordered by position", 
+      ylab="B-allele frequency", 
+      main=paste0("Sample ",i))
 }
 ```
 
@@ -157,7 +171,14 @@ The following plots represent the mBAF data for chromosome 1 in our case. Scalin
 n_samps = ncol(case.mBAF)-3
 par(mfrow=c(ceiling(n_samps/2),2))
 for(i in 1:n_samps) {
-plot(case.mBAF[case.mBAF$Chr==1,3+i], ylim=c(0.5,1), col="darkgrey", pch=20, cex=0.1, xlab="Chromosome 1 SNP probes ordered by position", ylab="Mirrored BAF", main=paste0("Sample ",i))
+plot(case.mBAF[case.mBAF$Chr==1,3+i], 
+      ylim=c(0.5,1), 
+      col="darkgrey", 
+      pch=20, 
+      cex=0.1, 
+      xlab="Chromosome 1 SNP probes ordered by position", 
+      ylab="Mirrored BAF", 
+      main=paste0("Sample ",i))
 }
 ```
 
@@ -208,9 +229,23 @@ The genomic waviness profile (shown in blue) maps the bias present across chromo
 n_samps = ncol(case.LRR)-3
 par(mfrow=c(ceiling(n_samps/2),2))
 for(i in 1:n_samps) {
-plot(case.LRR[case.LRR$Chr==1,3+i], ylim=c(-1,1), col="darkgrey", pch=20, cex=0.1, xlab="Chromosome 1 SNP probes ordered by position", ylab="Log R ratio", main=paste0("Sample ",i))
+plot(case.LRR[case.LRR$Chr==1,3+i], 
+      ylim=c(-1,1), 
+      col="darkgrey", 
+      pch=20, 
+      cex=0.1, 
+      xlab="Chromosome 1 SNP probes ordered by position", 
+      ylab="Log R ratio", 
+      main=paste0("Sample ",i))
 par(new=TRUE)
-plot(c(rep(movav_avnorm_genome[5], times=4), movav_avnorm_genome[5:23066]), ylim=c(-1,1), col="darkblue", type="l", ylab="", xlab="", xaxt = 'n', yaxt = 'n')
+plot(c(rep(movav_avnorm_genome[5], times=4), movav_avnorm_genome[5:23066]), 
+      ylim=c(-1,1), 
+      col="darkblue", 
+      type="l", 
+      ylab="", 
+      xlab="", 
+      xaxt = 'n', 
+      yaxt = 'n')
 }
 ```
 
