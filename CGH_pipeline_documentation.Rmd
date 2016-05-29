@@ -285,7 +285,7 @@ cghdata_case <- preprocess(case.LRR, maxmiss = 0, nchrom = 23)
 norm.case.LRR <- normalize(cghdata_case, method="median", smoothOutliers=TRUE)
 seg.case.LRR <- segmentData(norm.case.LRR, method = "DNAcopy", undo.splits = "sdundo", undo.SD = undo_SD, clen = clen, relSDlong = relSDlong)
 postseg.case.LRR <- postsegnormalize(seg.case.LRR)
-result <- CGHcall_edit(postseg.case.LRR, nclass = 5, cellularity = ASCAT.CGHcall)
+result <- CGHcall(postseg.case.LRR, nclass = 5, cellularity = ASCAT.CGHcall)
 case.LRR.Called <- ExpandCGHcall(result, postseg.case.LRR)
 
 #Save CGHcall output
