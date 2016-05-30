@@ -168,6 +168,8 @@ for(s in 1:(ncol(case.mBAF)-3)) {
       #Scale the remaining SNPs if greater than 0.56
       case.mBAF[which(case.mBAF[,s+3] > 0.56),s+3] = (0.5*((case.mBAF[which(case.mBAF[,s+3] > 0.56),s+3]-0.5)/(upper.threshold-0.5)))+0.5
     }
+
+save(case.mBAF, file="case.mBAF.Rdata")
 ```
 
 The following plots represent the mBAF data for chromosome 1 in our case. Scaling begins after 0.56. This is a tumour specific profile.
