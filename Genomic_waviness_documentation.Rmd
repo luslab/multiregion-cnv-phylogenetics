@@ -137,7 +137,9 @@ At this point we calculate the average LRR signal for each SNP probe individuall
 
 ```{r, cache=TRUE}
 #Calculate mean LRR for each SNP prone
-total_normals_data_frame_mean <- data.frame(total_normals_data_frame, rowMeans(total_normals_data_frame[,4:ncol(total_normals_data_frame)], na.rm=TRUE))
+total_normals_data_frame_mean <- data.frame(total_normals_data_frame, 
+					    rowMeans(total_normals_data_frame[,4:ncol(total_normals_data_frame)], 
+					    na.rm=TRUE))
 colnames(total_normals_data_frame_mean)[ncol(total_normals_data_frame_mean)] <- "mean"
 ```
 
@@ -186,9 +188,24 @@ save(movav_avnorm_genome, file="movav_avnorm_genome.Rdata")
 The following plot maps the genomic waviness against the normal samples taken from case 1.
 
 ```{r, echo=FALSE, fig.width=10, fig.height=5}
-plot(total_normals_data_frame[total_normals_data_frame$Chr==1,4], ylim=c(-1,1), col="darkgrey", pch=20, cex=0.1, xlab="Chromosome 1 SNP probes ordered by position", ylab="Log R ratio", main=paste0(""))
+plot(total_normals_data_frame[total_normals_data_frame$Chr==1,4], 
+	ylim=c(-1,1), 
+	col="darkgrey", 
+	pch=20, 
+	cex=0.1, 
+	xlab="Chromosome 1 SNP probes ordered by position", 
+	ylab="Log R ratio", 
+	main=paste0(""))
 par(new=TRUE)
-plot(c(rep(movav_avnorm_genome[5], times=4), movav_avnorm_genome[5:23066]), ylim=c(-1,1), col="darkblue", type="l", ylab="", xlab="", xaxt = 'n', yaxt = 'n')
+plot(c(rep(movav_avnorm_genome[5], times=4), 
+	movav_avnorm_genome[5:23066]), 
+	ylim=c(-1,1), 
+	col="darkblue", 
+	type="l", 
+	ylab="", 
+	xlab="", 
+	xaxt = 'n', 
+	yaxt = 'n')
 ```
 
 Finally we define our normalisation function which measures the population variance of all the LRR data for the array after it has been subtracted by the genomic waviness multipled by a weight. By default the weight argument is 3 which results in testing weights from -3 to 3 in 0.1 intervals. The weight that produces the minimum variance is used to produce the final normalised sample.
