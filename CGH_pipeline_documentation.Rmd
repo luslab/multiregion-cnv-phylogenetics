@@ -430,7 +430,17 @@ for(i in 1:nrow(test_data)) {
   
 for (i in 1:nrow(test_data)) {
   x = seq(test_data[i,2], test_data[i,3], by=100000)
-  plot(x, rep(test_data[i,(ncol(test_data)-1)], times=length(x)), pch=20, cex=1, ylim=c(0,24), xlim=c(0,250000000), xlab="", ylab="", xaxt="n", yaxt="n", col=colours[i])
+  plot(x, 
+      rep(test_data[i,(ncol(test_data)-1)], times=length(x)), 
+      pch=20, 
+      cex=1, 
+      ylim=c(0,24), 
+      xlim=c(0,250000000), 
+      xlab="", 
+      ylab="", 
+      xaxt="n", 
+      yaxt="n", 
+      col=colours[i])
   par(new="TRUE")
 }
   
@@ -544,7 +554,18 @@ for(i in 1:nrow(test_data)) {
   
 for (i in 1:nrow(test_data)) {
   x = seq(test_data[i,2], test_data[i,3], by=100000)
-  plot(x, rep(test_data[i,(ncol(test_data)-1)], times=length(x)), pch=20, cex=1, ylim=c(0,24), xlim=c(0,250000000), xlab="", ylab="", xaxt="n", yaxt="n", col=colours[i])
+  plot(x, 
+      rep(test_data[i,(ncol(test_data)-1)], 
+      times=length(x)), 
+      pch=20, 
+      cex=1, 
+      ylim=c(0,24), 
+      xlim=c(0,250000000), 
+      xlab="", 
+      ylab="", 
+      xaxt="n", 
+      yaxt="n", 
+      col=colours[i])
   par(new="TRUE")
 }
   
