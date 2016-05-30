@@ -615,14 +615,22 @@ system(paste0("mkdir ",names(BAFreqs_all[case]),"_FASTA"))
 #Write minor allele FASTA file for each chromosome
 for (u in 1:max(C)){
   for (s in 1:num_samples) {
-    write.fasta(MinorAppChrom[[u]][,s+1], names=paste0(colnames(case.mBAF[s+3])), nbchar=50, file.out=paste0(names(BAFreqs_all[case]),"_FASTA/Minor_chr",u,".fasta"), open="a")
+    write.fasta(MinorAppChrom[[u]][,s+1], 
+            names=paste0(colnames(case.mBAF[s+3])), 
+            nbchar=50, 
+            file.out=paste0(names(BAFreqs_all[case]),"_FASTA/Minor_chr",u,".fasta"), 
+            open="a")
   }
 }
 
 #Write major allele FASTA file for each chromosome
 for (u in 1:max(C)){
   for (s in 1:num_samples) {
-    write.fasta(MajorAppChrom[[u]][,s+1], names=paste0(colnames(case.mBAF[s+3])), nbchar=50, file.out=paste0(names(BAFreqs_all[case]),"_FASTA/Major_chr",u,".fasta"), open="a")
+    write.fasta(MajorAppChrom[[u]][,s+1], 
+            names=paste0(colnames(case.mBAF[s+3])), 
+            nbchar=50, 
+            file.out=paste0(names(BAFreqs_all[case]),"_FASTA/Major_chr",u,".fasta"), 
+            open="a")
   }
 }
 ```
