@@ -199,11 +199,11 @@ We also need to load the genomic waviness profile generated previously. This mea
 #Load genomic waviness
 load("./movav_avnorm_genome.Rdata")
 load("./female.chr.X.movav.Rdata")
-load("./male.chr.X.movav.med.zeo.Rdata")
+load("./male.chr.X.movav.med.zero.Rdata")
 
 #Make gender specific genomic waviness
 female.movav_avnorm_genome = c(movav_avnorm_genome, female.chr.X.movav)
-male.movav_avnorm_genome   = c(movav_avnorm_genome, male.chr.X.movav.med.zeo)
+male.movav_avnorm_genome   = c(movav_avnorm_genome, male.chr.X.movav.med.zero)
 ```
 
 Firstly, we'll make an output directory for this particular case and save the original LRR data in it.
