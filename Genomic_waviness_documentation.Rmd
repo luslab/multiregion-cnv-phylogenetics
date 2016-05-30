@@ -16,7 +16,7 @@ library(plyr)
 Next we load the LRR data for all cases in this investigation.
 
 ```{r, cache=TRUE}
-load("~/Wilms_tumour_project/results/2014-06-09/LogR_Ratios_all_v2.Rdata")
+load("./LogR_Ratios_all_v2.Rdata")
 ```
 
 Here we document all our normal kidney and blood samples that will act as our normal samples for detection of genomic waviness.
