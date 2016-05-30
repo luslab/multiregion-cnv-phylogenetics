@@ -26,10 +26,10 @@ case = 9
 
 ```{r}
 #Source file with the functions we need for this investigation
-source("~/Wilms_tumour_project/bin/Original_George_Scripts/CGH_pipeline_source_file_v2.R")
+source("./CGH_pipeline_source_file_v2.R")
 
 #Load the processed mBAF
-load("~/Wilms_tumour_project/results/2015-03-10/Threshold_mBAF_v3.Rdata")
+load("./Threshold_mBAF_v3.Rdata")
 
 #Record number of samples in this case
 n.samples      <- ncol(Threshold_mBAF_v3[[case]]) - 3
