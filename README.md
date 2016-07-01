@@ -6,9 +6,9 @@ This respository details the analysis associated with the publication 'Intra-Tum
 For each autosomal SNP array probe, the mean Log R ratio (log2[observed intensity/reference intensity], LRR) across all normal tissue arrays in our dataset (normal kidney and blood samples, n = 22) was calculated, generating a mean normal profile. For each autosome a moving average profile was generated from the mean normal profile using a window size of 10 probes. The moving average profile from the normal samples represents the genomic waves of each autosome in the array. Genomic wave detection was applied separately for male and female X chromosome LRRs. To centre the male X chromosome signal around zero, the profile was subtracted by the median value. 
 LRR values were corrected for genomic waves in each array for all autosome and X chromosome probes. The contribution of the genomic waves to genome-wide LRR variation in each array is determined by subtracting the genomic waves (G) from corresponding array probe LRRs (S) using the coefficient (ɑ) which minimises LRR population variation across all genomic probes to generate normalised LRR (N),
 
-arg min {var(Si - aGi)} = a<sub>min</sub>,
+arg min {var(S<sub>i</sub> - ɑG<sub>i</sub>)} = ɑ<sub>min</sub>,
 
-S<sub>i</sub>-aG<sub>i</sub> = N<sub>i</sub>.
+S<sub>i</sub>-ɑG<sub>i</sub> = N<sub>i</sub>.
 
 # Regions of copy number changes per case
 The normalised LRRs from each array were segmented and copy number states were called using the ‘CGHcall’ R package\[1\] in Bioconductor\[2\] using the ‘sdundo’ option for the undo.splits parameter for segmentation (undo.SD=5, clen=13, relSDlong=8.33). 
