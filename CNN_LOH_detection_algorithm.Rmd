@@ -26,7 +26,7 @@ case = 9
 
 ```{r}
 #Source file with the functions we need for this investigation
-source("./CGH_pipeline_source_file_v2.R")
+source("./CGH_pipeline_source_file.R")
 
 #Load the processed mBAF
 load("./Threshold_mBAF_v3.Rdata")
