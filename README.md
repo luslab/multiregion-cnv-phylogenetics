@@ -6,9 +6,9 @@ This respository details the analysis associated with the publication 'Intra-Tum
 For each autosomal SNP array probe, the mean Log R ratio (log2[observed intensity/reference intensity], LRR) across all normal tissue arrays in our dataset (normal kidney and blood samples, n = 22) was calculated, generating a mean normal profile. For each autosome a moving average profile was generated from the mean normal profile using a window size of 10 probes. The moving average profile from the normal samples represents the genomic waves of each autosome in the array. Genomic wave detection was applied separately for male and female X chromosome LRRs. To centre the male X chromosome signal around zero, the profile was subtracted by the median value. 
 LRR values were corrected for genomic waves in each array for all autosome and X chromosome probes. The contribution of the genomic waves to genome-wide LRR variation in each array is determined by subtracting the genomic waves (G) from corresponding array probe LRRs (S) using the coefficient (ɑ) which minimises LRR population variation across all genomic probes to generate normalised LRR (N),
 
-arg min {var(Si - Gi)} =min,
+arg min {var(Si - aGi)} = amin,
 
-Si-Gi = Ni.
+Si-aGi = Ni.
 
 # Regions of copy number changes per case
 The normalised LRRs from each array were segmented and copy number states were called using the ‘CGHcall’ R package[1] in Bioconductor[2] using the ‘sdundo’ option for the undo.splits parameter for segmentation (undo.SD=5, clen=13, relSDlong=8.33). 
@@ -21,7 +21,7 @@ In order to generate a tumour specific mirrored B-allele frequency (mBAF) profil
 
 The remaining mBAF values (B) that are greater than 0.56 are scaled between 0.5 and the non-informative homozygous SNP threshold (T) to give a tumour specific mBAF value (M),
 
-(0.5B) - 0.5T - 0.5+0.5 = M.
+((0.5*B) - 0.5) / (T - 0.5) + 0.5 = M.
 
 Mean mBAF was calculated for each copy number loss (copy number = 1) and gain (copy number = 3) state genomic region and for each region, calls were reversed to normal if the mean mBAF was not greater than 0.58 and 0.64 for gain and loss states respectively.
 
