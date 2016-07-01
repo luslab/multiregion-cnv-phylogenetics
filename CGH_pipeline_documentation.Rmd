@@ -192,7 +192,7 @@ plot(case.mBAF[case.mBAF$Chr==1,3+i],
 For the rest of the analysis we will need the source file specific to this pipeline.
 
 ```{r}
-source("./CGH_pipeline_source_file_v2.R")
+source("./CGH_pipeline_source_file.R")
 ```
 
 We also need to load the genomic waviness profile generated previously. This means loading the profiles for the autosomes, male and female X chromosomes separately and combining them on for each sex.
