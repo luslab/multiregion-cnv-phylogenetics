@@ -8,7 +8,7 @@ LRR values were corrected for genomic waves in each array for all autosome and X
 
 arg min {var(Si - aGi)} = a<sub>min</sub>,
 
-Si-aGi = Ni.
+S<sub>i</sub>-aG<sub>i</sub> = N<sub>i</sub>.
 
 # Regions of copy number changes per case
 The normalised LRRs from each array were segmented and copy number states were called using the ‘CGHcall’ R package[1] in Bioconductor[2] using the ‘sdundo’ option for the undo.splits parameter for segmentation (undo.SD=5, clen=13, relSDlong=8.33). 
