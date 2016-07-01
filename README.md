@@ -39,7 +39,11 @@ T-A = B.
 The major and minor allele copy numbers per chromosome per array were used as input for MEDICC[5].
 
 1	van de Wiel MA, Kim KI, Vosse SJ, van Wieringen WN, Wilting SM, Ylstra B. CGHcall: calling aberrations for array CGH tumor profiles. Bioinformatics 2007; 23: 892–4.
+
 2	Gentleman RC, Carey VJ, Bates DM, et al. Bioconductor: open software development for computational biology and bioinformatics. Genome Biol 2004; 5: R80.
+
 3	van de Wiel MA, van Wieringen WN. CGHregions: dimension reduction for array CGH data with minimal information loss. Cancer Inform 2007. http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2675846/.
+
 4	Van Loo P, Nordgard SH, Lingjærde OC, et al. Allele-specific copy number analysis of tumors. Proc Natl Acad Sci U S A 2010; 107: 16910–5.
+
 5	Schwarz RF, Trinh A, Sipos B, Brenton JD, Goldman N, Markowetz F. Phylogenetic quantification of intra-tumour heterogeneity. PLoS Comput Biol 2014; 10: e1003535.
