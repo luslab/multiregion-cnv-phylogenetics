@@ -34,6 +34,7 @@ These newly identified regions were then incorporated into the genomic regions g
 Once the genomic regions of copy number states for a case were calculated, we calculated major (A) and minor (B) allele copy numbers for each region using the total copy number (T - as called by ‘CGHcall’) and the mean mBAF (M) for the probes within each genomic region. We used the following equation to determine major and minor allele copy numbers;
 
 round(TM) = A,
+
 T-A = B.
 
 The major and minor allele copy numbers per chromosome per array were used as input for MEDICC\[5\].
